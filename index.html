@@ -22,7 +22,7 @@
 </head>
 <body>
   <h2 style="text-align:center">Registration Form</h2>
-  <form id="Registration Form" autocomplete="off">
+  <form id="registrationForm" autocomplete="off">
     <label for="name">Full Name</label>
     <input type="text" id="name" required>
 
@@ -111,7 +111,7 @@
     });
 
     // Form submission: works for both phone and external reader
-    document.getElementById('Registration Form').addEventListener('submit', async function(event) {
+    document.getElementById('registrationForm').addEventListener('submit', async function(event) {
       event.preventDefault();
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -134,9 +134,9 @@
           timestamp: firebase.firestore.Timestamp.fromDate(timestamp),
           status: "present"
         });
-        document.getElementById('result').innerText = "Registration successfully!";
+        document.getElementById('result').innerText = "Registration successful!";
         document.getElementById('result').style.color = "#227722";
-        document.getElementById('attendanceForm').reset();
+        document.getElementById('registrationForm').reset();
         nfcField.focus();
       } catch (error) {
         document.getElementById('result').innerText = "Error registering: " + error;
@@ -152,7 +152,7 @@
           document.getElementById('name').value.trim() &&
           document.getElementById('nfc_uid').value.trim()
         ) {
-          document.getElementById('Registration Form').requestSubmit();
+          document.getElementById('registrationForm').requestSubmit();
         }
       }
     });
