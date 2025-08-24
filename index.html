@@ -124,7 +124,7 @@
       const name = document.getElementById('name').value.trim();
       // const email = document.getElementById('email').value.trim();
       const department = document.getElementById('department').value.trim();
-      const ID_Number = document.getElementById('ID_Number').value.trim();
+      const idNumber = document.getElementById('ID_Number').value.trim();
       const nfc_uid = document.getElementById('nfc_uid').value.trim();
       const timestamp = new Date();
 
@@ -138,9 +138,10 @@
         console.log("Attempting to write to Firestore");
         await db.collection('registration').add({
           name: name,
-           //email: email,
+           //email: email, 
+           // made corrections
           department: department,
-          ID_Number: ID_Number,
+          idNumber: idNumber,
           nfc_uid: nfc_uid,
           timestamp: firebase.firestore.Timestamp.fromDate(timestamp),
            //status: "present"
