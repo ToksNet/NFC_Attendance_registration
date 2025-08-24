@@ -32,6 +32,9 @@
     <label for="department">Department</label>
     <input type="text" id="department">
 
+    <label for="ID Number">ID Number</label>
+    <input type="text" id="ID Number">
+
     <label for="nfc_uid">
       NFC Card UID
       <small style="display:block;font-size:13px;color:#555;">
@@ -121,6 +124,7 @@
       const name = document.getElementById('name').value.trim();
       // const email = document.getElementById('email').value.trim();
       const department = document.getElementById('department').value.trim();
+      const IDNumber = document.getElementById('ID Number').value.trim();
       const nfc_uid = document.getElementById('nfc_uid').value.trim();
       const timestamp = new Date();
 
@@ -136,6 +140,7 @@
           name: name,
            //email: email,
           department: department,
+          ID_number: ID_Number,
           nfc_uid: nfc_uid,
           timestamp: firebase.firestore.Timestamp.fromDate(timestamp),
            //status: "present"
